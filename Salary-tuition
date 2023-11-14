@@ -1,0 +1,33 @@
+link replit
+# https://replit.com/join/qhmzawjemy-maria-fernan901
+
+def calculate_commission(sales):
+  if sales < 3500:
+      return 0.07 * sales
+  elif 3500 <= sales <= 7000:
+      return 0.10 * sales
+  else:
+      return 0.15 * sales
+
+def calculate_total_salary(base_salary, sales):
+  commission = calculate_commission(sales)
+  total_salary = base_salary + commission
+  return total_salary
+
+def main():
+  while True:
+      has_another_seller = input("¿There is other seller? (yes/no): ").lower()
+
+      if has_another_seller != 'yes':
+          break
+
+      seller_name = input("name of the seller: ")
+      base_salary = float(input("Salary base {}:".format(seller_name)))
+      total_sales = float(input("Ventas totales de {}: ".format(seller_name)))
+
+      total_salary = calculate_total_salary(base_salary, total_sales)
+
+      print("the salary total  {} is: {}".format(seller_name, total_salary))
+
+if __name__ == "__main__":
+  main()
